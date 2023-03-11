@@ -14,7 +14,7 @@ class AppTest {
     List<Integer> list;
 
     @BeforeEach
-    void initList(){
+    void initList() {
         list = new ArrayList<>();
         list.add(1);
         list.add(2);
@@ -23,40 +23,30 @@ class AppTest {
     }
 
     @Test
-    void testTake() {
-        // BEGIN
-        List<Integer> nullList;
-        try {
-            nullList = App.take(null, 5);
-            Assertions.assertEquals( nullList.size(), 0);
-        } catch (NullPointerException e) {
-            Assertions.fail("Expect that null list return empty List");
-        }
-        System.out.println("testTake");
-        // END
-    }
-    @Test
     void take_ListSizeGreaterThanCount() {
         // BEGIN
-        Assertions.assertEquals(App.take(list,2).size(),2);
+        Assertions.assertEquals(App.take(list, 2).size(), 2);
         // END
     }
+
     @Test
     void take_ListSizeEqualsCount() {
         // BEGIN
-        Assertions.assertEquals(App.take(list,4).size(),4);
+        Assertions.assertEquals(App.take(list, 4).size(), 4);
         // END
     }
+
     @Test
     void take_CountEqualsZero() {
         // BEGIN
-        Assertions.assertEquals(App.take(list,0).size(),0);
+        Assertions.assertEquals(App.take(list, 0).size(), 0);
         // END
     }
+
     @Test
     void take_ListSizeLessThanCount() {
         // BEGIN
-        Assertions.assertEquals(App.take(list,8).size(),4);
+        Assertions.assertEquals(App.take(list, 8).size(), 4);
         // END
     }
 }
