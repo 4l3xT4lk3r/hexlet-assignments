@@ -39,7 +39,8 @@ public class ProductsRepository extends BaseRepository {
                 String title = rs.getString("title");
                 int price = rs.getInt("price");
                 Product product = new Product(title, price);
-                entities.add(new Product(title, price));
+                product.setId(id);
+                entities.add(product);
             }
             return entities;
         }
